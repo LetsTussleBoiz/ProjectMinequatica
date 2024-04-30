@@ -2,6 +2,9 @@ package net.luluborealis.luluocean;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -81,5 +84,17 @@ public class LuluOcean
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }
+    }
+
+    public static ResourceLocation createLocation(String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
+    public static ResourceLocation createLocation(ResourceKey<?> path) {
+        return path.location();
+    }
+
+    public static ResourceLocation createLocation(Holder<?> holder) {
+        return createLocation(holder.unwrapKey().orElseThrow());
     }
 }
