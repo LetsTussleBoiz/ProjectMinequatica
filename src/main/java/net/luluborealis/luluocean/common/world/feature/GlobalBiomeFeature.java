@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.luluborealis.luluocean.mixin.access.BiomeGenerationSettingsAccess;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
@@ -43,10 +44,10 @@ public class GlobalBiomeFeature extends Feature<GlobalBiomeFeature.Config> {
         addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_STRUCTURES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_STRUCTURES)));
         addPlacedFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_SURFACE_STRUCTURES)));
         addPlacedFeature(GenerationStep.Decoration.STRONGHOLDS, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_STRONGHOLDS)));
-        addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_ORES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_ORES)));
+        //addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_ORES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_ORES)));
         addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_DECORATION)));
         addPlacedFeature(GenerationStep.Decoration.FLUID_SPRINGS, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_FLUID_SPRINGS)));
-        addPlacedFeature(GenerationStep.Decoration.VEGETAL_DECORATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_VEGETAL_DECORATION)));
+        //addPlacedFeature(GenerationStep.Decoration.VEGETAL_DECORATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_VEGETAL_DECORATION)));
         addPlacedFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_TOP_LAYER_MODIFICATION)));
     }
 

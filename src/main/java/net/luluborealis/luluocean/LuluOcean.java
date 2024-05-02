@@ -97,4 +97,26 @@ public class LuluOcean
     public static ResourceLocation createLocation(Holder<?> holder) {
         return createLocation(holder.unwrapKey().orElseThrow());
     }
+
+    public static void logWarning(String msg) {
+        if (Config.getLoggerSettings().logWarnings()) {
+            LOGGER.warn(msg);
+        }
+    }
+
+    public static void logInfo(String msg) {
+        if (Config.getLoggerSettings().logInfo()) {
+            LOGGER.info(msg);
+        }
+    }
+
+    public static void logDebug(String msg) {
+        if (Config.getLoggerSettings().logDebug()) {
+            LOGGER.debug(msg);
+        }
+    }
+
+    public static void logError(String msg) {
+        LOGGER.error(msg);
+    }
 }
