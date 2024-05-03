@@ -29,6 +29,7 @@ public class LuluOcean
 
     public LuluOcean()
     {
+        logInfo("LuluOcean Plugin Initialized...");
         BYGRegistry.loadClasses();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);

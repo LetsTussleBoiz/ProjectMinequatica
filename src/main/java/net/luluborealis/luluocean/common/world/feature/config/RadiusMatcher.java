@@ -2,7 +2,6 @@ package net.luluborealis.luluocean.common.world.feature.config;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
-
 import java.util.Arrays;
 import java.util.Locale;
 

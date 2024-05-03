@@ -23,5 +23,6 @@ public class BYGFeatures {
     }
 
     public static void loadClass() {
+        LuluOcean.logInfo("BYGFeatures has been loaded");
     }
 }

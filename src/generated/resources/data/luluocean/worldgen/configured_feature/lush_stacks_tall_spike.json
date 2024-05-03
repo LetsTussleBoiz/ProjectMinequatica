@@ -1,5 +1,5 @@
 {
-  "type": "byg:pointed_rock",
+  "type": "luluocean:tall_pointed_rock",
   "config": {
     "block_provider": {
       "type": "minecraft:weighted_state_provider",
@@ -19,12 +19,6 @@
         {
           "data": {
             "Name": "minecraft:andesite"
-          },
-          "weight": 1
-        },
-        {
-          "data": {
-            "Name": "byg:rocky_stone"
           },
           "weight": 1
         }

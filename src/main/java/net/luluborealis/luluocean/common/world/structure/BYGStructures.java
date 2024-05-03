@@ -1,6 +1,5 @@
 package net.luluborealis.luluocean.common.world.structure;
 
-import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.luluborealis.luluocean.LuluOcean;
 import net.luluborealis.luluocean.common.world.biome.BYGBiomeTags;
@@ -8,6 +7,7 @@ import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
 import net.luluborealis.luluocean.common.world.feature.features.BYGStructurePlacedFeatures;
 import net.luluborealis.luluocean.common.world.structure.arch.ArchConfiguration;
 import net.luluborealis.luluocean.common.world.structure.arch.ArchStructure;
+import net.luluborealis.luluocean.common.world.structure.arch.BlendingFunction;
 import net.luluborealis.luluocean.mixin.access.StructuresAccess;
 import net.minecraft.Util;
 import net.minecraft.core.HolderGetter;

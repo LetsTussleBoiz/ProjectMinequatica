@@ -26,8 +26,6 @@ public class BYGConfigHandler {
 
     public static String loadAllConfigs(boolean serialize, boolean recreate, boolean isClientSide) {
         StringBuilder errors = new StringBuilder();
-        errors.append(tryCatchErrors(() -> SettingsConfig.getConfig(serialize, recreate)));
-        errors.append(tryCatchErrors(() -> ConfigVersionTracker.getConfig(new ConfigVersionTracker(BYGConstants.CONFIG_VERSION), recreate)));
         errors.append(tryCatchErrors(BYGConfigHandler::makeREADME));
 
         if (!errors.isEmpty()) {

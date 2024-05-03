@@ -2,7 +2,6 @@ package net.luluborealis.luluocean.common.world.structure.arch;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectCollection;
 import net.luluborealis.luluocean.common.world.structure.BYGStructureTypes;

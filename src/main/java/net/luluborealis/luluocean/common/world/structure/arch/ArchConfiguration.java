@@ -2,7 +2,6 @@ package net.luluborealis.luluocean.common.world.structure.arch;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

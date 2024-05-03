@@ -1,5 +1,6 @@
 package net.luluborealis.luluocean.core;
 
+import net.luluborealis.luluocean.LuluOcean;
 import net.luluborealis.luluocean.common.world.feature.BYGFeatures;
 import net.luluborealis.luluocean.common.world.feature.BYGPlacedFeatures;
 import net.luluborealis.luluocean.common.world.feature.features.BYGStructurePlacedFeatures;
@@ -15,5 +16,6 @@ public class BYGRegistry {
         BYGPlacedFeatures.loadClass();
         BYGStructurePlacedFeatures.loadClass();
         BYGStructures.loadClass();
+        LuluOcean.logInfo("Loaded BYG registry");
     }
 }
