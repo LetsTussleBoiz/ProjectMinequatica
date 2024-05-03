@@ -16,20 +16,15 @@ import java.util.Map;
 public class BYGStructureSets {
     public static final Map<ResourceKey<StructureSet>, StructureSetFactory> STRUCTURE_SET_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
-    public static final ResourceKey<StructureSet> SEA_ARCHES = register("sea_arches", (structureHolderGetter) -> new StructureSet(List.of(StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.OVERGROWN_STONE_ARCH), 24), StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.STONE_ARCH), 1)), new RandomSpreadStructurePlacement(5, 2, RandomSpreadType.LINEAR, 457854789)));
-    private static ResourceKey<StructureSet> register(String id, StructureSetFactory factory) {
-        ResourceKey<StructureSet> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE_SET, LuluOcean.createLocation(id));
+    public static final ResourceKey<StructureSet> SEA_ARCHES = register((structureHolderGetter) -> new StructureSet(List.of(StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.OVERGROWN_STONE_ARCH), 24), StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.STONE_ARCH), 1)), new RandomSpreadStructurePlacement(5, 2, RandomSpreadType.LINEAR, 457854789)));
+    private static ResourceKey<StructureSet> register(StructureSetFactory factory) {
+        ResourceKey<StructureSet> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE_SET, LuluOcean.createLocation("sea_arches"));
         STRUCTURE_SET_FACTORIES.put(structureSetResourceKey, factory);
         return structureSetResourceKey;
     }
 
-    public static void bootStrap() {
-        BYGStructures.loadClass();
-    }
-
     @FunctionalInterface
     public interface StructureSetFactory {
-
         StructureSet generate(HolderGetter<Structure> placedFeatureHolderGetter);
     }
 }
