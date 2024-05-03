@@ -1,4 +1,4 @@
-package potionstudios.byg.mixin.access;
+package net.luluborealis.luluocean.mixin.access;
 
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.List;
 
-@Mixin(StructureTemplatePool.class)
+@Mixin(value = StructureTemplatePool.class, remap = false)
 public interface StructureTemplatePoolAccess {
 
     @Accessor("templates")

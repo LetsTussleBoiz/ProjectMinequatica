@@ -2,12 +2,9 @@ package net.luluborealis.luluocean.common.world.feature.features;
 
 import net.luluborealis.luluocean.common.world.feature.BYGFeatures;
 import net.luluborealis.luluocean.common.world.feature.GlobalBiomeFeature;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 //import potionstudios.byg.common.world.feature.BYGFeatures;
 //import potionstudios.byg.common.world.feature.BYGGlobalPlacedFeatures;
 //import potionstudios.byg.common.world.feature.GlobalBiomeFeature;

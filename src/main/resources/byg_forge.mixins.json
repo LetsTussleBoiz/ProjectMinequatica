@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "net.luluborealis.luluocean.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "byg_forge.refmap.json",
+  "mixins": [
+    "access.BiomeGenerationSettingsAccess",
+    "access.BiomeSourceAccess",
+    "access.BlockStateProviderAccess",
+    "access.ChunkGeneratorAccess",
+    "access.CommandSourceStackAccess",
+    "access.OverworldBiomesAccess",
+    "access.StructuresAccess",
+    "access.StructureTemplatePoolAccess",
+    "access.VanillaBiomeAccess",
+    "access.WeightedListAccess",
+    "server.MixinMinecraftServer"
+  ],
+  "plugin": "net.luluborealis.luluocean.mixin.BYGPotionStudiosMixinPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

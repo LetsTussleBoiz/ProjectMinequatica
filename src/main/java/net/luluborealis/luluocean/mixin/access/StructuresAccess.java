@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 import java.util.Map;
 
-@Mixin(Structures.class)
+@Mixin(value = Structures.class, remap = false)
 public interface StructuresAccess {
 
     @Invoker("structure")

@@ -13,13 +13,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import static net.luluborealis.luluocean.mixin.access.OverworldBiomesAccess.byg_invokeBaseOceanGeneration;
 import static net.luluborealis.luluocean.mixin.access.OverworldBiomesAccess.byg_invokeGlobalOverworldGeneration;
-//import potionstudios.byg.common.entity.BYGEntities;
-//import potionstudios.byg.common.sound.BYGSounds;
-//import potionstudios.byg.common.world.feature.BYGPlacedFeatures;
-//import potionstudios.byg.mixin.access.VanillaBiomeAccess;
-
-//import static potionstudios.byg.mixin.access.OverworldBiomesAccess.byg_invokeBaseOceanGeneration;
-//import static potionstudios.byg.mixin.access.OverworldBiomesAccess.byg_invokeGlobalOverworldGeneration;
 
 @SuppressWarnings("UnreachableCode")
 public class BYGOverworldBiomes {
@@ -48,10 +41,7 @@ public class BYGOverworldBiomes {
     public static Biome deadSea(HolderGetter<PlacedFeature> placedFeatureGetter, HolderGetter<ConfiguredWorldCarver<?>> carverGetter) {
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder(placedFeatureGetter, carverGetter);
-        byg_invokeGlobalOverworldGeneration(generationSettings);
-
-        BiomeDefaultFeatures.addDefaultOres(generationSettings);
-        BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
+        addDefaultOverworldGeneration(generationSettings);
         generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
         BiomeDefaultFeatures.addDripstone(generationSettings);
 

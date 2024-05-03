@@ -8,10 +8,6 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProviderType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-//import potionstudios.byg.BYG;
-//import potionstudios.byg.mixin.access.BlockStateProviderAccess;
-//import potionstudios.byg.reg.RegistrationProvider;
-//import potionstudios.byg.reg.RegistryObject;
 
 public class BYGStateProviders {
     private static final DeferredRegister<BlockStateProviderType<?>> PROVIDER = DeferredRegister.create(Registries.BLOCK_STATE_PROVIDER_TYPE, LuluOcean.MOD_ID);

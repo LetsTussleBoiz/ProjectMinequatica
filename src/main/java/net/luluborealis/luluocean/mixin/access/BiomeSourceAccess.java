@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 import java.util.Set;
 import java.util.function.Supplier;
 
-@Mixin(BiomeSource.class)
+@Mixin(value = BiomeSource.class, remap = false)
 public interface BiomeSourceAccess {
 
     @Invoker("codec")

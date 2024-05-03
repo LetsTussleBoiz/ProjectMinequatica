@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.List;
 
-@Mixin(BiomeGenerationSettings.class)
+@Mixin(value = BiomeGenerationSettings.class, remap = false)
 public interface BiomeGenerationSettingsAccess {
 
     @Mutable

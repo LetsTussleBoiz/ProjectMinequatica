@@ -1,7 +1,17 @@
-package potionstudios.byg.mixin.server;
+package net.luluborealis.luluocean.mixin.server;
 
 
 import com.mojang.datafixers.DataFixer;
+import net.luluborealis.luluocean.BYGConstants;
+import net.luluborealis.luluocean.LuluOcean;
+import net.luluborealis.luluocean.common.world.feature.GlobalBiomeFeature;
+import net.luluborealis.luluocean.common.world.util.BiomeSourceRepairUtils;
+import net.luluborealis.luluocean.common.world.util.JigsawUtil;
+import net.luluborealis.luluocean.config.ConfigVersionTracker;
+import net.luluborealis.luluocean.config.SettingsConfig;
+import net.luluborealis.luluocean.server.command.UpdateConfigsCommand;
+import net.luluborealis.luluocean.util.ModPlatform;
+import net.luluborealis.luluocean.util.ServerKillCountDown;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
@@ -29,27 +39,12 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import potionstudios.byg.BYG;
-import potionstudios.byg.BYGConstants;
-import potionstudios.byg.common.world.feature.GlobalBiomeFeature;
-import potionstudios.byg.common.world.surfacerules.BYGSurfaceRules;
-import potionstudios.byg.common.world.util.BiomeSourceRepairUtils;
-import potionstudios.byg.common.world.util.JigsawUtil;
-import potionstudios.byg.config.ConfigVersionTracker;
-import potionstudios.byg.config.SettingsConfig;
-import potionstudios.byg.config.json.OverworldBiomeConfig;
-import potionstudios.byg.server.command.UpdateConfigsCommand;
-import potionstudios.byg.util.BYGUtil;
-import potionstudios.byg.util.ModPlatform;
-import potionstudios.byg.util.ServerKillCountDown;
 
 import java.net.Proxy;
 import java.util.Map;
 import java.util.function.BooleanSupplier;
 
-import static potionstudios.byg.util.AddSurfaceRulesUtil.appendSurfaceRule;
-
-@Mixin(MinecraftServer.class)
+@Mixin(value = MinecraftServer.class, remap = false)
 public abstract class MixinMinecraftServer implements ServerKillCountDown {
 
 
@@ -86,24 +81,9 @@ public abstract class MixinMinecraftServer implements ServerKillCountDown {
             JigsawUtil.addBYGBuildingsToPool(templatePoolRegistry, processorListRegistry);
         }
 
-        BYG.logConfigErrors();
+        LuluOcean.logConfigErrors();
     }
 
-
-    @Inject(method = "createLevels", at = @At("RETURN"))
-    private void hackyAddSurfaceRules(ChunkProgressListener $$0, CallbackInfo ci) {
-        if (SettingsConfig.getConfig().useBYGWorldGen()) {
-            boolean terrablenderApplied = ModPlatform.INSTANCE.isModLoaded("terrablender") && this.registryAccess().registryOrThrow(Registries.LEVEL_STEM).getHolderOrThrow(LevelStem.OVERWORLD).value().generator().getBiomeSource() instanceof MultiNoiseBiomeSource;
-            if (!terrablenderApplied && OverworldBiomeConfig.getConfig().generateOverworld()) { // We add our surface rules through Terrablender's API.
-                appendSurfaceRule(registryAccess(), LevelStem.OVERWORLD, BYGSurfaceRules.OVERWORLD_SURFACE_RULES);
-            }
-            appendSurfaceRule(registryAccess(), LevelStem.NETHER, BYGSurfaceRules.NETHER_SURFACE_RULES);
-            appendSurfaceRule(registryAccess(), LevelStem.END, BYGSurfaceRules.END_SURFACE_RULES);
-        }
-        BYGUtil.useTagReplacements = true;
-    }
-
-    @SuppressWarnings("all")
     @Inject(method = "tickServer", at = @At("RETURN"))
     private void displayDisconnectWarning(BooleanSupplier $$0, CallbackInfo ci) {
         if (byg$killTime > 0) {
@@ -121,7 +101,7 @@ public abstract class MixinMinecraftServer implements ServerKillCountDown {
         }
 
         if (byg$notifyErrorFrequency >= 36000) {
-            BYG.logConfigErrors();
+            LuluOcean.logConfigErrors();
             byg$notifyErrorFrequency = 0;
         }
         byg$notifyErrorFrequency++;

@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.luluborealis.luluocean.LuluOcean;
-import net.luluborealis.luluocean.common.world.feature.BYGFeatures;
 import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
 import net.luluborealis.luluocean.common.world.structure.BYGStructurePieceTypes;
 import net.minecraft.core.BlockPos;

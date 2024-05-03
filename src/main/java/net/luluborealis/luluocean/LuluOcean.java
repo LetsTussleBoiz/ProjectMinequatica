@@ -1,6 +1,7 @@
 package net.luluborealis.luluocean;
 
 import com.mojang.logging.LogUtils;
+import net.luluborealis.luluocean.config.BYGConfigHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
@@ -34,7 +35,7 @@ public class LuluOcean
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
+        // Register the commonSetup method for mod loading
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
@@ -55,7 +56,7 @@ public class LuluOcean
         if (Config.logDirtBlock)
             LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
 
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
+        LOGGER.info("{}{}", Config.magicNumberIntroduction, Config.magicNumber);
 
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
@@ -118,5 +119,32 @@ public class LuluOcean
 
     public static void logError(String msg) {
         LOGGER.error(msg);
+    }
+
+    public static void logConfigErrors() {
+        if (!BYGConfigHandler.CONFIG_EXCEPTIONS.isEmpty()) {
+            for (int i = 0; i < 3; i++) {
+                LuluOcean.logError("");
+            }
+            LuluOcean.logError("=".repeat(100));
+            LuluOcean.logError("");
+            LuluOcean.logError("BYG config(s) errors have occurred, BYG has used default settings instead! Errors:");
+            LuluOcean.logError("");
+            int count = 0;
+            for (Exception e : BYGConfigHandler.CONFIG_EXCEPTIONS) {
+                LuluOcean.logError(count + ". " + e.getMessage());
+                LuluOcean.logError("");
+                count++;
+            }
+
+            LuluOcean.logError("");
+            LuluOcean.logError("This error goes away after you fix or delete your configs and you restart your game.");
+            LuluOcean.logError("");
+            LuluOcean.logError("=".repeat(100));
+
+            for (int i = 0; i < 3; i++) {
+                LuluOcean.logError("");
+            }
+        }
     }
 }

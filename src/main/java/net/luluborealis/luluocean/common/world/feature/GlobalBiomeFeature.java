@@ -44,7 +44,6 @@ public class GlobalBiomeFeature extends Feature<GlobalBiomeFeature.Config> {
         addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_STRUCTURES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_STRUCTURES)));
         addPlacedFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_SURFACE_STRUCTURES)));
         addPlacedFeature(GenerationStep.Decoration.STRONGHOLDS, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_STRONGHOLDS)));
-        //addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_ORES, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_ORES)));
         addPlacedFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_UNDERGROUND_DECORATION)));
         addPlacedFeature(GenerationStep.Decoration.FLUID_SPRINGS, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_FLUID_SPRINGS)));
         //addPlacedFeature(GenerationStep.Decoration.VEGETAL_DECORATION, features, HolderSet.direct(placedFeatures.getHolderOrThrow(BYGPlacedFeatures.GLOBAL_VEGETAL_DECORATION)));

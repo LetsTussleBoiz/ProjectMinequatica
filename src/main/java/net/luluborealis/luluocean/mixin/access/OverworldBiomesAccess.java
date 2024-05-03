@@ -8,7 +8,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
-@Mixin(OverworldBiomes.class)
+@Mixin(value = OverworldBiomes.class, remap = false)
 public interface OverworldBiomesAccess {
 
     @Invoker("globalOverworldGeneration")

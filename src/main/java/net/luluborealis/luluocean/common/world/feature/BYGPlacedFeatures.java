@@ -10,7 +10,6 @@ import net.minecraft.world.level.levelgen.placement.*;
 import static net.luluborealis.luluocean.common.world.feature.features.BYGFeaturesUtil.globalGenStagePath;
 import static net.luluborealis.luluocean.common.world.feature.placement.BYGPlacedFeaturesUtil.createPlacedFeature;
 import static net.luluborealis.luluocean.common.world.feature.placement.BYGPlacedFeaturesUtil.oceanFloorSquaredWithCount;
-import static net.minecraft.data.worldgen.placement.VegetationPlacements.treePlacement;
 
 public class BYGPlacedFeatures {
 

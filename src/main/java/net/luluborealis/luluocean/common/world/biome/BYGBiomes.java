@@ -7,7 +7,6 @@ import net.luluborealis.luluocean.BYGConstants;
 import net.luluborealis.luluocean.LuluOcean;
 import net.luluborealis.luluocean.common.world.placement.BYGPlacementModifierType;
 import net.luluborealis.luluocean.common.world.structure.BYGStructureSets;
-import net.luluborealis.luluocean.common.world.surfacerules.rulesource.BYGRuleSources;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -58,7 +57,6 @@ public class BYGBiomes {
     public static void loadClass() {
         BYGStructureSets.bootStrap();
         BYGPlacementModifierType.bootStrap();
-        BYGRuleSources.bootStrap();
     }
 
 
