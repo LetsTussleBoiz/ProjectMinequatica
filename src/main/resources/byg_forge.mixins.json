@@ -13,6 +13,7 @@
     "access.StructuresAccess",
     "access.StructureTemplatePoolAccess",
     "access.VanillaBiomeAccess",
+    "access.WeightedEntryWrapperAccess",
     "access.WeightedListAccess",
     "server.MixinMinecraftServer"
   ],

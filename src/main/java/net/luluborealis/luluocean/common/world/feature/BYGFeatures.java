@@ -16,10 +16,6 @@ public class BYGFeatures {
     private static final DeferredRegister<Feature<?>> PROVIDER = DeferredRegister.create(ForgeRegistries.FEATURES, LuluOcean.MOD_ID);
 
     public static final RegistryObject<Feature<GlobalBiomeFeature.Config>> GLOBAL = createFeature("global", GlobalBiomeFeature::new);
-
-    //public static final RegistryObject<Feature<SimpleBlockProviderConfig>> ARCH = createFeature("arch", () -> new ArchFeature(SimpleBlockProviderConfig.CODEC.stable()));
-    //public static final RegistryObject<Feature<SimpleBlockProviderConfig>> SPIKE = createFeature("spike", () -> new SpikeFeature(SimpleBlockProviderConfig.CODEC.stable()));
-
     /********************************************************************Features*************************************************************************/
     //DeadSea
     public static final RegistryObject<Feature<PointyRockConfig>> POINTY_ROCK = createFeature("pointed_rock", () -> new PointyRockFeature(PointyRockConfig.CODEC.stable()));
