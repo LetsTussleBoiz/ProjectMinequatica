@@ -36,7 +36,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:frozen_depths"
+                            "biome": "minecraft:mushroom_fields"
                         },
                         {
                             "parameters": {
@@ -126,7 +126,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -186,7 +186,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -216,7 +216,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -282,6 +282,36 @@
                             "parameters": {
                                 "weirdness": [
                                     -1,
+                                    -0.26666668
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
                                     -0.7666667
                                 ],
                                 "continentalness": [
@@ -293,7 +323,7 @@
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -336,7 +366,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -355,6 +385,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
+                                    -0.7666667
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -406,6 +466,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
+                                    -0.93333334
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -413,7 +503,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -456,7 +546,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -563,7 +653,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -696,7 +786,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -756,7 +846,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -846,7 +936,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -972,6 +1062,36 @@
                             "parameters": {
                                 "weirdness": [
                                     -0.7666667,
+                                    -0.56666666
+                                ],
+                                "continentalness": [
+                                    -0.19,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.7666667,
                                     -0.4
                                 ],
                                 "continentalness": [
@@ -983,7 +1103,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -1026,7 +1146,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -1176,7 +1296,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -1266,7 +1386,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -1296,7 +1416,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -1313,7 +1433,7 @@
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -1345,6 +1465,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.4,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -1396,6 +1546,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.4,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -1403,7 +1583,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -1446,7 +1626,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -1493,7 +1673,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -1566,7 +1746,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -1606,7 +1786,7 @@
                                 ],
                                 "continentalness": [
                                     -0.11,
-                                    1
+                                    0.03
                                 ],
                                 "erosion": [
                                     -1,
@@ -1656,7 +1836,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -1699,12 +1879,102 @@
                                     1
                                 ],
                                 "erosion": [
+                                    -1,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -1,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.15,
+                                    0.55
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
                                     0.45,
                                     1
                                 ],
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    0.45,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -1735,6 +2005,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.3,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -1896,7 +2196,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -1956,7 +2256,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -2076,7 +2376,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2106,7 +2406,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -2146,7 +2446,7 @@
                                 ],
                                 "continentalness": [
                                     -0.11,
-                                    1
+                                    0.03
                                 ],
                                 "erosion": [
                                     -1,
@@ -2226,7 +2526,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2269,6 +2569,36 @@
                                     1
                                 ],
                                 "erosion": [
+                                    -1,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.05,
+                                    0.26666668
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
                                     -0.375,
                                     1
                                 ],
@@ -2299,11 +2629,11 @@
                                     1
                                 ],
                                 "erosion": [
-                                    0.45,
+                                    -0.375,
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.15,
+                                    -0.45,
                                     0.55
                                 ],
                                 "humidity": [
@@ -2346,7 +2676,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2376,7 +2706,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -2496,7 +2826,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2556,7 +2886,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2622,7 +2952,7 @@
                             "parameters": {
                                 "weirdness": [
                                     0.26666668,
-                                    0.56666666
+                                    1
                                 ],
                                 "continentalness": [
                                     -0.11,
@@ -2630,7 +2960,7 @@
                                 ],
                                 "erosion": [
                                     -0.78,
-                                    0.55
+                                    -0.375
                                 ],
                                 "temperature": [
                                     -0.45,
@@ -2646,7 +2976,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "minecraft:deep_lukewarm_ocean"
+                            "biome": "minecraft:lukewarm_ocean"
                         },
                         {
                             "parameters": {
@@ -2706,7 +3036,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2742,6 +3072,66 @@
                             "parameters": {
                                 "weirdness": [
                                     0.26666668,
+                                    0.56666666
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.26666668,
+                                    0.4
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.26666668,
                                     0.4
                                 ],
                                 "continentalness": [
@@ -2753,7 +3143,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -2796,7 +3186,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -2903,7 +3293,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -3066,7 +3456,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -3126,7 +3516,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -3216,7 +3606,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -3372,6 +3762,36 @@
                             "parameters": {
                                 "weirdness": [
                                     0.56666666,
+                                    0.7666667
+                                ],
+                                "continentalness": [
+                                    -0.19,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.56666666,
                                     0.93333334
                                 ],
                                 "continentalness": [
@@ -3383,7 +3803,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -3426,7 +3846,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -3666,7 +4086,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -3816,7 +4236,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -3889,12 +4309,12 @@
                                     0.03
                                 ],
                                 "erosion": [
-                                    -0.78,
-                                    0.55
+                                    -0.375,
+                                    1
                                 ],
                                 "temperature": [
-                                    -0.45,
-                                    -0.15
+                                    -1,
+                                    -0.45
                                 ],
                                 "humidity": [
                                     -1,
@@ -3920,11 +4340,11 @@
                                 ],
                                 "erosion": [
                                     -0.375,
-                                    1
+                                    0.55
                                 ],
                                 "temperature": [
-                                    -1,
-                                    -0.45
+                                    -0.45,
+                                    -0.15
                                 ],
                                 "humidity": [
                                     -1,
@@ -4006,6 +4426,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    0,
+                                    0
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.93333334,
+                                    1
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -4013,7 +4463,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -4056,7 +4506,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4103,7 +4553,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -4176,7 +4626,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:frozen_depths"
+                            "biome": "minecraft:mushroom_fields"
                         },
                         {
                             "parameters": {
@@ -4266,7 +4716,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -4326,7 +4776,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4356,7 +4806,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -4422,6 +4872,36 @@
                             "parameters": {
                                 "weirdness": [
                                     -1,
+                                    -0.26666668
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
                                     -0.7666667
                                 ],
                                 "continentalness": [
@@ -4433,7 +4913,7 @@
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -4476,7 +4956,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4495,6 +4975,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
+                                    -0.7666667
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -4546,6 +5056,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -1,
+                                    -0.93333334
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -4553,7 +5093,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -4596,7 +5136,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4703,7 +5243,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -4836,7 +5376,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4896,7 +5436,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -4986,7 +5526,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -5112,6 +5652,36 @@
                             "parameters": {
                                 "weirdness": [
                                     -0.7666667,
+                                    -0.56666666
+                                ],
+                                "continentalness": [
+                                    -0.19,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.7666667,
                                     -0.4
                                 ],
                                 "continentalness": [
@@ -5123,7 +5693,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -5166,7 +5736,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -5316,7 +5886,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -5406,7 +5976,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -5436,7 +6006,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -5453,7 +6023,7 @@
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -5485,6 +6055,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.4,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -5536,6 +6136,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.4,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -5543,7 +6173,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -5586,7 +6216,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -5633,7 +6263,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -5706,7 +6336,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -5746,7 +6376,7 @@
                                 ],
                                 "continentalness": [
                                     -0.11,
-                                    1
+                                    0.03
                                 ],
                                 "erosion": [
                                     -1,
@@ -5796,7 +6426,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -5839,12 +6469,102 @@
                                     1
                                 ],
                                 "erosion": [
+                                    -1,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -1,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.15,
+                                    0.55
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
                                     0.45,
                                     1
                                 ],
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    0.45,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -5875,6 +6595,36 @@
                                 "temperature": [
                                     -1,
                                     -0.45
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    -0.26666668,
+                                    -0.05
+                                ],
+                                "continentalness": [
+                                    0.3,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    0.55
                                 ],
                                 "humidity": [
                                     -1,
@@ -6036,7 +6786,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6096,7 +6846,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -6216,7 +6966,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6246,7 +6996,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -6286,7 +7036,7 @@
                                 ],
                                 "continentalness": [
                                     -0.11,
-                                    1
+                                    0.03
                                 ],
                                 "erosion": [
                                     -1,
@@ -6366,7 +7116,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6409,6 +7159,36 @@
                                     1
                                 ],
                                 "erosion": [
+                                    -1,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.05,
+                                    0.26666668
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
                                     -0.375,
                                     1
                                 ],
@@ -6439,11 +7219,11 @@
                                     1
                                 ],
                                 "erosion": [
-                                    0.45,
+                                    -0.375,
                                     0.55
                                 ],
                                 "temperature": [
-                                    -0.15,
+                                    -0.45,
                                     0.55
                                 ],
                                 "humidity": [
@@ -6486,7 +7266,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6516,7 +7296,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -6636,7 +7416,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6696,7 +7476,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6762,7 +7542,7 @@
                             "parameters": {
                                 "weirdness": [
                                     0.26666668,
-                                    0.56666666
+                                    1
                                 ],
                                 "continentalness": [
                                     -0.11,
@@ -6770,7 +7550,7 @@
                                 ],
                                 "erosion": [
                                     -0.78,
-                                    0.55
+                                    -0.375
                                 ],
                                 "temperature": [
                                     -0.45,
@@ -6786,7 +7566,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "minecraft:deep_lukewarm_ocean"
+                            "biome": "minecraft:lukewarm_ocean"
                         },
                         {
                             "parameters": {
@@ -6846,7 +7626,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -6882,6 +7662,66 @@
                             "parameters": {
                                 "weirdness": [
                                     0.26666668,
+                                    0.56666666
+                                ],
+                                "continentalness": [
+                                    -0.11,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.375,
+                                    0.55
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:deep_lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.26666668,
+                                    0.4
+                                ],
+                                "continentalness": [
+                                    0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.26666668,
                                     0.4
                                 ],
                                 "continentalness": [
@@ -6893,7 +7733,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -6936,7 +7776,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7043,7 +7883,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -7206,7 +8046,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7266,7 +8106,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7356,7 +8196,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7512,6 +8352,36 @@
                             "parameters": {
                                 "weirdness": [
                                     0.56666666,
+                                    0.7666667
+                                ],
+                                "continentalness": [
+                                    -0.19,
+                                    0.03
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.56666666,
                                     0.93333334
                                 ],
                                 "continentalness": [
@@ -7523,7 +8393,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -7566,7 +8436,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7806,7 +8676,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -7956,7 +8826,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:dead_sea"
+                            "biome": "minecraft:plains"
                         },
                         {
                             "parameters": {
@@ -8029,12 +8899,12 @@
                                     0.03
                                 ],
                                 "erosion": [
-                                    -0.78,
-                                    0.55
+                                    -0.375,
+                                    1
                                 ],
                                 "temperature": [
-                                    -0.45,
-                                    -0.15
+                                    -1,
+                                    -0.45
                                 ],
                                 "humidity": [
                                     -1,
@@ -8060,11 +8930,11 @@
                                 ],
                                 "erosion": [
                                     -0.375,
-                                    1
+                                    0.55
                                 ],
                                 "temperature": [
-                                    -1,
-                                    -0.45
+                                    -0.45,
+                                    -0.15
                                 ],
                                 "humidity": [
                                     -1,
@@ -8146,6 +9016,36 @@
                                 ],
                                 "continentalness": [
                                     0.03,
+                                    1
+                                ],
+                                "erosion": [
+                                    -0.78,
+                                    -0.375
+                                ],
+                                "temperature": [
+                                    -0.45,
+                                    -0.15
+                                ],
+                                "humidity": [
+                                    -1,
+                                    1
+                                ],
+                                "depth": [
+                                    1,
+                                    1
+                                ],
+                                "offset": 0
+                            },
+                            "biome": "minecraft:lukewarm_ocean"
+                        },
+                        {
+                            "parameters": {
+                                "weirdness": [
+                                    0.93333334,
+                                    1
+                                ],
+                                "continentalness": [
+                                    0.03,
                                     0.3
                                 ],
                                 "erosion": [
@@ -8153,7 +9053,7 @@
                                     0.45
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [
@@ -8196,7 +9096,7 @@
                                 ],
                                 "offset": 0
                             },
-                            "biome": "luluocean:lush_stacks"
+                            "biome": "minecraft:forest"
                         },
                         {
                             "parameters": {
@@ -8243,7 +9143,7 @@
                                     -0.2225
                                 ],
                                 "temperature": [
-                                    -0.45,
+                                    -0.15,
                                     0.55
                                 ],
                                 "humidity": [

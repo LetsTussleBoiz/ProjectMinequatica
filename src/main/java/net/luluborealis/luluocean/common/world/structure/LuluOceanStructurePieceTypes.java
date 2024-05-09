@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Locale;
 
-public class BYGStructurePieceTypes {
+public class LuluOceanStructurePieceTypes {
     public static final DeferredRegister<StructurePieceType> PROVIDER = DeferredRegister.create(Registries.STRUCTURE_PIECE, LuluOcean.MOD_ID);
     public static final RegistryObject<StructurePieceType> ARCH_PIECE = setFullContextPieceId(ArchPiece::new, "ArchPiece");
 

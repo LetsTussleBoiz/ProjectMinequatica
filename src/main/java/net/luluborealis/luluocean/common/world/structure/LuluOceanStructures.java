@@ -1,13 +1,13 @@
 package net.luluborealis.luluocean.common.world.structure;
 
+import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import it.unimi.dsi.fastutil.objects.Reference2ObjectOpenHashMap;
 import net.luluborealis.luluocean.LuluOcean;
-import net.luluborealis.luluocean.common.world.biome.BYGBiomeTags;
+import net.luluborealis.luluocean.common.world.biome.LuluOceanBiomeTags;
 import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
-import net.luluborealis.luluocean.common.world.feature.features.BYGStructurePlacedFeatures;
+import net.luluborealis.luluocean.common.world.feature.features.LuluOceanStructurePlacedFeatures;
 import net.luluborealis.luluocean.common.world.structure.arch.ArchConfiguration;
 import net.luluborealis.luluocean.common.world.structure.arch.ArchStructure;
-import net.luluborealis.luluocean.common.world.structure.arch.BlendingFunction;
 import net.luluborealis.luluocean.mixin.access.StructuresAccess;
 import net.minecraft.Util;
 import net.minecraft.core.HolderGetter;
@@ -31,14 +31,14 @@ import java.util.List;
 import java.util.Map;
 
 
-public class BYGStructures {
+public class LuluOceanStructures {
 
     public static final Map<ResourceKey<Structure>, StructureFactory> STRUCTURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
     public static final ResourceKey<Structure> OVERGROWN_STONE_ARCH = register("overgrown_stone_arch", (structureFactoryBootstapContext) -> {
         HolderGetter<PlacedFeature> lookup = structureFactoryBootstapContext.lookup(Registries.PLACED_FEATURE);
 
-        return new ArchStructure(structure(structureFactoryBootstapContext.lookup(Registries.BIOME).getOrThrow(BYGBiomeTags.HAS_OVERGROWN_STONE_ARCH), GenerationStep.Decoration.RAW_GENERATION, TerrainAdjustment.NONE), Util.make(new ArchConfiguration.Builder(), builder -> {
+        return new ArchStructure(structure(structureFactoryBootstapContext.lookup(Registries.BIOME).getOrThrow(LuluOceanBiomeTags.HAS_OVERGROWN_STONE_ARCH), GenerationStep.Decoration.RAW_GENERATION, TerrainAdjustment.NONE), Util.make(new ArchConfiguration.Builder(), builder -> {
             WeightedStateProvider blockProvider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(Blocks.STONE.defaultBlockState(), 6)
                     .add(Blocks.MOSSY_COBBLESTONE.defaultBlockState(), 3)
@@ -52,7 +52,7 @@ public class BYGStructures {
                     ).withNoiseFrequency(0.1F)
                     .withTopBlockProvider(
                             blockProvider
-                    ).withSpawningFeatures(List.of(lookup.getOrThrow(BYGStructurePlacedFeatures.ARCH_MOSS_PATCH), lookup.getOrThrow(BYGStructurePlacedFeatures.ARCH_MOSS_PATCH_CEILING)))
+                    ).withSpawningFeatures(List.of(lookup.getOrThrow(LuluOceanStructurePlacedFeatures.ARCH_MOSS_PATCH), lookup.getOrThrow(LuluOceanStructurePlacedFeatures.ARCH_MOSS_PATCH_CEILING)))
                     .build()
             );
             builder.withMatchingBlendingFunctionChance(ConstantFloat.of(0.2F));
@@ -63,7 +63,7 @@ public class BYGStructures {
         }).build());
     });
 
-    public static final ResourceKey<Structure> STONE_ARCH = register("stone_arch", (structureFactoryBootstapContext) -> new ArchStructure(structure(structureFactoryBootstapContext.lookup(Registries.BIOME).getOrThrow(BYGBiomeTags.HAS_STONE_ARCH), GenerationStep.Decoration.RAW_GENERATION, TerrainAdjustment.NONE), Util.make(new ArchConfiguration.Builder(), builder -> {
+    public static final ResourceKey<Structure> STONE_ARCH = register("stone_arch", (structureFactoryBootstapContext) -> new ArchStructure(structure(structureFactoryBootstapContext.lookup(Registries.BIOME).getOrThrow(LuluOceanBiomeTags.HAS_STONE_ARCH), GenerationStep.Decoration.RAW_GENERATION, TerrainAdjustment.NONE), Util.make(new ArchConfiguration.Builder(), builder -> {
         WeightedStateProvider blockProvider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                 .add(Blocks.STONE.defaultBlockState(), 4)
                 .add(Blocks.ANDESITE.defaultBlockState(), 1)
@@ -93,10 +93,12 @@ public class BYGStructures {
         return structureSetResourceKey;
     }
 
+    @SuppressWarnings("unused")
     private static Structure.StructureSettings structure(HolderSet<Biome> tag, TerrainAdjustment adj) {
         return StructuresAccess.structure(tag, Map.of(), GenerationStep.Decoration.SURFACE_STRUCTURES, adj);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static Structure.StructureSettings structure(HolderSet<Biome> tag, GenerationStep.Decoration decoration, TerrainAdjustment adj) {
         return StructuresAccess.structure(tag, Map.of(), decoration, adj);
     }

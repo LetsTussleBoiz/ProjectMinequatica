@@ -62,8 +62,8 @@ public class TallPointedRocks extends ChunkCoordinatesFeature<PointyRockConfig> 
 
     private static int redistribute(float height, float groundLevel) {
         float halfG = groundLevel * 0.5f;
-        height = (height - 125 - halfG) / 80;
+        height = (height - 90 - halfG) / 80;
         float sigmoid = height / (1 + Math.abs(height));
-        return (int) ((170 - groundLevel) * sigmoid + halfG + 125);
+        return (int) ((180 - groundLevel) * sigmoid + halfG + 125);
     }
 }

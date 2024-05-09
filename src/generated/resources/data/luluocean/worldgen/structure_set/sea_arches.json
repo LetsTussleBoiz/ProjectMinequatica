@@ -1,0 +1,18 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 457854789,
+    "separation": 2,
+    "spacing": 5
+  },
+  "structures": [
+    {
+      "structure": "luluocean:overgrown_stone_arch",
+      "weight": 24
+    },
+    {
+      "structure": "luluocean:stone_arch",
+      "weight": 4
+    }
+  ]
+}

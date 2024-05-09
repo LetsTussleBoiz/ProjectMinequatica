@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.*;
 import java.util.function.Supplier;
 
-public class BYGPlacedFeaturesUtil {
+public class LuluOceanPlacedFeaturesUtil {
 
     public static final Map<ResourceKey<PlacedFeature>, PlacedFeatureFactory> PLACED_FEATURE_FACTORIES = new Reference2ObjectOpenHashMap<>();
 
@@ -39,9 +39,9 @@ public class BYGPlacedFeaturesUtil {
     }
 
     public static <FC extends FeatureConfiguration> ResourceKey<PlacedFeature> createPlacedFeature(String id, ResourceKey<ConfiguredFeature<?, ?>> feature, Supplier<List<PlacementModifier>> placementModifiers) {
-        ResourceLocation bygID = LuluOcean.createLocation(id);
+        ResourceLocation luluOceanID = LuluOcean.createLocation(id);
 
-        ResourceKey<PlacedFeature> placedFeatureKey = ResourceKey.create(Registries.PLACED_FEATURE, bygID);
+        ResourceKey<PlacedFeature> placedFeatureKey = ResourceKey.create(Registries.PLACED_FEATURE, luluOceanID);
 
 
         PLACED_FEATURE_FACTORIES.put(placedFeatureKey, configuredFeatureHolderGetter -> new PlacedFeature(configuredFeatureHolderGetter.getOrThrow(feature), placementModifiers.get()));

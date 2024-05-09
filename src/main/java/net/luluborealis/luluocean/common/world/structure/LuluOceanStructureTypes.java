@@ -9,16 +9,14 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.function.Supplier;
-
-public class BYGStructureTypes {
+public class LuluOceanStructureTypes {
 
     public static final DeferredRegister<StructureType<?>> PROVIDER = DeferredRegister.create(Registries.STRUCTURE_TYPE, LuluOcean.MOD_ID);
 
-    public static final RegistryObject<StructureType<ArchStructure>> ARCH = register("arch", () -> ArchStructure.CODEC);
+    public static final RegistryObject<StructureType<ArchStructure>> ARCH = PROVIDER.register("arch", () -> explicitStructureTypeTyping(ArchStructure.CODEC));
 
-    private static <S extends Structure> RegistryObject<StructureType<S>> register(String id, Supplier<? extends Codec<S>> codec) {
-        return PROVIDER.register(id, () -> codec::get);
+    private static <T extends Structure> StructureType<T> explicitStructureTypeTyping(Codec<T> structureCodec) {
+        return () -> structureCodec;
     }
 
     public static void loadClass() {

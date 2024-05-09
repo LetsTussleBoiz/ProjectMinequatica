@@ -13,10 +13,11 @@ import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 import java.util.List;
 import java.util.Map;
 
-public class BYGStructureSets {
+public class LuluOceanStructureSets {
     public static final Map<ResourceKey<StructureSet>, StructureSetFactory> STRUCTURE_SET_FACTORIES = new Reference2ObjectOpenHashMap<>();
+    @SuppressWarnings("unused")
+    public static final ResourceKey<StructureSet> SEA_ARCHES = register((structureHolderGetter) -> new StructureSet(List.of(StructureSet.entry(structureHolderGetter.getOrThrow(LuluOceanStructures.OVERGROWN_STONE_ARCH), 24), StructureSet.entry(structureHolderGetter.getOrThrow(LuluOceanStructures.STONE_ARCH), 2)), new RandomSpreadStructurePlacement(5, 2, RandomSpreadType.LINEAR, 457854789)));
 
-    public static final ResourceKey<StructureSet> SEA_ARCHES = register((structureHolderGetter) -> new StructureSet(List.of(StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.OVERGROWN_STONE_ARCH), 24), StructureSet.entry(structureHolderGetter.getOrThrow(BYGStructures.STONE_ARCH), 1)), new RandomSpreadStructurePlacement(5, 2, RandomSpreadType.LINEAR, 457854789)));
     private static ResourceKey<StructureSet> register(StructureSetFactory factory) {
         ResourceKey<StructureSet> structureSetResourceKey = ResourceKey.create(Registries.STRUCTURE_SET, LuluOcean.createLocation("sea_arches"));
         STRUCTURE_SET_FACTORIES.put(structureSetResourceKey, factory);
@@ -26,5 +27,9 @@ public class BYGStructureSets {
     @FunctionalInterface
     public interface StructureSetFactory {
         StructureSet generate(HolderGetter<Structure> placedFeatureHolderGetter);
+    }
+
+    public static void bootStrap() {
+        LuluOceanStructures.loadClass();
     }
 }

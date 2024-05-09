@@ -1,9 +1,9 @@
 package net.luluborealis.luluocean.common.world.feature.features.overworld;
 
 import com.google.common.collect.ImmutableList;
-import net.luluborealis.luluocean.common.world.feature.BYGFeatures;
+import net.luluborealis.luluocean.common.world.feature.LuluOceanFeatures;
 import net.luluborealis.luluocean.common.world.feature.config.PointyRockConfig;
-import net.luluborealis.luluocean.common.world.feature.placement.BYGPlacedFeaturesUtil;
+import net.luluborealis.luluocean.common.world.feature.placement.LuluOceanPlacedFeaturesUtil;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -20,9 +20,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 
 import java.util.function.Supplier;
 
-import static net.luluborealis.luluocean.common.world.feature.features.BYGFeaturesUtil.createConfiguredFeature;
+import static net.luluborealis.luluocean.common.world.feature.features.LuluOceanFeaturesUtil.createConfiguredFeature;
 
-public class BYGOverworldFeatures {
+public class LuluOceanOverworldFeatures {
     private static final Supplier<WeightedStateProvider> LUSH_SPIKE_PROVIDER = () -> new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
             .add(Blocks.STONE.defaultBlockState(), 6)
             .add(Blocks.MOSSY_COBBLESTONE.defaultBlockState(), 3)
@@ -35,31 +35,31 @@ public class BYGOverworldFeatures {
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUSH_STACKS_SPIKE = createConfiguredFeature("lush_stacks_spike",
-            BYGFeatures.POINTY_ROCK,
+            LuluOceanFeatures.POINTY_ROCK,
             (configuredFeatureBootstapContext) -> {
                 HolderGetter<ConfiguredFeature<?, ?>> lookup = configuredFeatureBootstapContext.lookup(Registries.CONFIGURED_FEATURE);
                 return new PointyRockConfig.Builder()
                         .setBlock(LUSH_SPIKE_PROVIDER.get())
                         .setSeed(65)
-                        .setPostFeatures(HolderSet.direct(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(CaveFeatures.MOSS_PATCH))))
+                        .setPostFeatures(HolderSet.direct(LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(CaveFeatures.MOSS_PATCH))))
                         .build();
             }
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> LUSH_STACKS_SPIKE_TALL = createConfiguredFeature("lush_stacks_tall_spike",
-            BYGFeatures.POINTY_ROCK,
+            LuluOceanFeatures.TALL_POINTED_ROCK,
             (configuredFeatureBootstapContext) -> {
                 HolderGetter<ConfiguredFeature<?, ?>> lookup = configuredFeatureBootstapContext.lookup(Registries.CONFIGURED_FEATURE);
                 return new PointyRockConfig.Builder()
                         .setBlock(LUSH_SPIKE_PROVIDER.get())
                         .setSeed(65)
-                        .setPostFeatures(HolderSet.direct(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(CaveFeatures.MOSS_PATCH))))
+                        .setPostFeatures(HolderSet.direct(LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(CaveFeatures.MOSS_PATCH))))
                         .build();
             }
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_SEA_SPIKE = createConfiguredFeature("dead_sea_spike",
-            BYGFeatures.POINTY_ROCK,
+            LuluOceanFeatures.POINTY_ROCK,
             () -> new PointyRockConfig.Builder()
                     .setBlock(SPIKE_PROVIDER.get())
                     .setSeed(65)
@@ -67,7 +67,7 @@ public class BYGOverworldFeatures {
     );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEAD_SEA_SPIKE_TALL = createConfiguredFeature("dead_sea_tall_spike",
-            BYGFeatures.TALL_POINTED_ROCK,
+            LuluOceanFeatures.TALL_POINTED_ROCK,
             () -> new PointyRockConfig.Builder()
                     .setBlock(SPIKE_PROVIDER.get())
                     .setSeed(85)
@@ -80,8 +80,8 @@ public class BYGOverworldFeatures {
                 HolderGetter<ConfiguredFeature<?, ?>> lookup = configuredFeatureBootstapContext.lookup(Registries.CONFIGURED_FEATURE);
 
                 return new RandomFeatureConfiguration(ImmutableList.of(
-                        new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(LUSH_STACKS_SPIKE)), 0.75F)),
-                        BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(LUSH_STACKS_SPIKE_TALL)));
+                        new WeightedPlacedFeature(LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(LUSH_STACKS_SPIKE)), 0.75F)),
+                        LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(LUSH_STACKS_SPIKE_TALL)));
             }
             ));
 
@@ -91,8 +91,8 @@ public class BYGOverworldFeatures {
                 HolderGetter<ConfiguredFeature<?, ?>> lookup = configuredFeatureBootstapContext.lookup(Registries.CONFIGURED_FEATURE);
 
                 return new RandomFeatureConfiguration(ImmutableList.of(
-                        new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(DEAD_SEA_SPIKE)), 0.75F)),
-                        BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(DEAD_SEA_SPIKE_TALL)));
+                        new WeightedPlacedFeature(LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(DEAD_SEA_SPIKE)), 0.75F)),
+                        LuluOceanPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(DEAD_SEA_SPIKE_TALL)));
             }
     );
 

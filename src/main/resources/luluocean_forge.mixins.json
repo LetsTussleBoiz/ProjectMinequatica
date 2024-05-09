@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "net.luluborealis.luluocean.mixin.access",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "${mod_name}.refmap.json",
+  "mixins": [
+    "OverworldBiomesAccess",
+    "StructuresAccess",
+    "VanillaBiomeAccess",
+    "WeightedListAccess"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.4"
+}

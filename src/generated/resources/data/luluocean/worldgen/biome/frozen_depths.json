@@ -101,7 +101,9 @@
 		]
 	},
 	"features": [
-		[],
+		[
+			"luluocean:dead_sea_spikes"
+		],
 		[
 			"minecraft:lake_lava_underground",
 			"minecraft:lake_lava_surface"

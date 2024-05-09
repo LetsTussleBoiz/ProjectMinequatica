@@ -1,0 +1,19 @@
+package net.luluborealis.luluocean.common.world.feature.features;
+
+import net.luluborealis.luluocean.common.world.feature.placement.LuluOceanPlacedFeaturesUtil;
+import net.minecraft.data.worldgen.features.CaveFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
+
+public class LuluOceanStructurePlacedFeatures {
+
+    public static final ResourceKey<PlacedFeature> ARCH_MOSS_PATCH_CEILING = LuluOceanPlacedFeaturesUtil.createPlacedFeature("arch_moss_patch_ceiling", CaveFeatures.MOSS_PATCH_CEILING, () -> RarityFilter.onAverageOnceEvery(350), () -> RandomOffsetPlacement.vertical(UniformInt.of(-15, -10)));
+    public static final ResourceKey<PlacedFeature> ARCH_MOSS_PATCH = LuluOceanPlacedFeaturesUtil.createPlacedFeature("arch_moss_patch", CaveFeatures.MOSS_PATCH, () -> RarityFilter.onAverageOnceEvery(350), () -> PlacementUtils.HEIGHTMAP);
+
+    public static void loadClass() {
+    }
+}

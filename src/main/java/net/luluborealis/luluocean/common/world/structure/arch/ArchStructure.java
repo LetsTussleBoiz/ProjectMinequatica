@@ -2,9 +2,10 @@ package net.luluborealis.luluocean.common.world.structure.arch;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectCollection;
-import net.luluborealis.luluocean.common.world.structure.BYGStructureTypes;
+import net.luluborealis.luluocean.common.world.structure.LuluOceanStructureTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.SectionPos;
@@ -187,6 +188,6 @@ public class ArchStructure extends Structure {
 
     @Override
     public @NotNull StructureType<?> type() {
-        return BYGStructureTypes.ARCH.get();
+        return LuluOceanStructureTypes.ARCH.get();
     }
 }

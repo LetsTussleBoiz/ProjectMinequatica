@@ -10,7 +10,6 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 @Mod.EventBusSubscriber(modid = LuluOcean.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public record Config(boolean appendBiomePlacedFeatures, boolean customStructures, LoggerSettings loggerSettings)
 {
-
     private static final Config DEFAULT = new Config(true, true, new LoggerSettings(false, true, false));
 
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();

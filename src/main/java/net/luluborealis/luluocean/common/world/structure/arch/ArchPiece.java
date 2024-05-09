@@ -5,7 +5,7 @@ import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.luluborealis.luluocean.LuluOcean;
 import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
-import net.luluborealis.luluocean.common.world.structure.BYGStructurePieceTypes;
+import net.luluborealis.luluocean.common.world.structure.LuluOceanStructurePieceTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.*;
@@ -36,13 +36,13 @@ public class ArchPiece extends StructurePiece {
     private final NoisySphereConfig config;
 
     public ArchPiece(Set<BlockPos> positions, NoisySphereConfig config, int $$1, BoundingBox generatingBB) {
-        super(BYGStructurePieceTypes.ARCH_PIECE.get(), $$1, generatingBB);
+        super(LuluOceanStructurePieceTypes.ARCH_PIECE.get(), $$1, generatingBB);
         this.config = config;
         this.positions.addAll(positions);
     }
 
     public ArchPiece(StructurePieceSerializationContext context, CompoundTag tag) {
-        super(BYGStructurePieceTypes.ARCH_PIECE.get(), tag);
+        super(LuluOceanStructurePieceTypes.ARCH_PIECE.get(), tag);
 
         RegistryOps<Tag> tagRegistryOps = RegistryOps.create(NbtOps.INSTANCE, context.registryAccess());
 

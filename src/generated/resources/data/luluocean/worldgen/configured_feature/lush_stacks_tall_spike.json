@@ -1,5 +1,5 @@
 {
-  "type": "luluocean:tall_pointed_rock",
+  "type": "luluocean:pointed_rock",
   "config": {
     "block_provider": {
       "type": "minecraft:weighted_state_provider",

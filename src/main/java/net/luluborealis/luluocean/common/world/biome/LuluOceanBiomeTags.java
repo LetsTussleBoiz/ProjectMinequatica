@@ -5,7 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
-public class BYGBiomeTags {
+public class LuluOceanBiomeTags {
 
     public static final TagKey<Biome> HAS_OVERGROWN_STONE_ARCH = create("has_structure/overgrown_stone_arch");
     public static final TagKey<Biome> HAS_STONE_ARCH = create("has_structure/stone_arch");

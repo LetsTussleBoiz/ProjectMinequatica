@@ -1,6 +1,5 @@
 package net.luluborealis.luluocean.config;
 
-import net.luluborealis.luluocean.BYGConstants;
 import net.luluborealis.luluocean.util.ModPlatform;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.ClickEvent;

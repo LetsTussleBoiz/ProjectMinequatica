@@ -110,14 +110,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "byg:man_o_war",
-        "maxCount": 50,
-        "minCount": 50,
-        "weight": 200
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
