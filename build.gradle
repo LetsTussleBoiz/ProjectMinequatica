@@ -57,6 +57,11 @@ tasks.withType(JavaCompile).configureEach {
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
 
+    if (project.hasProperty('forge_ats_enabled') && project.findProperty('forge_ats_enabled').toBoolean()) {
+        accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+        project.logger.debug('Forge Access Transformers are enabled for this project.')
+    }
+
     runs {
         client {
             workingDirectory project.file('run')
@@ -85,9 +90,18 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 dependencies {
     minecraft 'net.minecraftforge:forge:' + minecraft_version + '-' + forge_version
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.0"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.0")) {
+        jarJar.ranged(it, "[0.4.0,)")
+    }
+
     implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:' + minecraft_version + '-' + terrablender_version)
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")
     implementation fg.deobf("curse.maven:corgilib-693313:5170914")
+    implementation fg.deobf("curse.maven:alexs-caves-924854:5162617")
+    implementation fg.deobf("curse.maven:citadel-331936:5143956")
+    implementation fg.deobf("curse.maven:xaeros-minimap-263420:5262365")
+    implementation fg.deobf("curse.maven:xaeros-world-map-317780:5262424")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 

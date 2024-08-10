@@ -7,6 +7,10 @@ import net.luluborealis.luluocean.common.world.feature.LuluOceanFeatures;
 import net.luluborealis.luluocean.common.world.structure.LuluOceanStructurePieceTypes;
 import net.luluborealis.luluocean.config.BYGConfigHandler;
 import net.luluborealis.luluocean.core.LuluOceanRegistry;
+import net.luluborealis.luluocean.registry.RegisterGameEvents;
+import net.luluborealis.luluocean.registry.RegisterParticles;
+import net.luluborealis.luluocean.registry.RegisterProperties;
+import net.luluborealis.luluocean.registry.RegisterSounds;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -25,6 +29,7 @@ import terrablender.api.Regions;
 import java.util.Arrays;
 
 import static net.luluborealis.luluocean.common.world.structure.LuluOceanStructureTypes.*;
+import static net.luluborealis.luluocean.networking.LuluOceanNetworking.registerSensorHiccupPacket;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LuluOcean.MOD_ID)
@@ -37,23 +42,25 @@ public class LuluOcean
 
     public LuluOcean()
     {
-        logInfo("LuluOcean Plugin Initialized...");
         final var modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         LuluOceanRegistry.loadClasses();
-
-        // Add Features to Register
-//        PointyRockFeature pointy_feature = new PointyRockFeature(PointyRockConfig.CODEC.stable());
-//        TallPointedRocks tall_pointy_feature = new TallPointedRocks(PointyRockConfig.CODEC.stable());
-//        ForgeRegistries.FEATURES.register("pointed_rock", pointy_feature);
-//        ForgeRegistries.FEATURES.register("tall_pointed_rock", tall_pointy_feature);
+        RegisterProperties.init();
 
         // Register DeferredRegisters to EventBus
         PROVIDER.register(modEventBus);
+        RegisterParticles.PROVIDER.register(modEventBus);
+        RegisterGameEvents.PROVIDER.register(modEventBus);
+        RegisterSounds.PROVIDER.register(modEventBus);
         LuluOceanStructurePieceTypes.PROVIDER.register(modEventBus);
         LuluOceanBiomes.PROVIDER.register(modEventBus);
         LuluOceanFeatures.PROVIDER.register(modEventBus);
 
+
+        // Networking
+        registerSensorHiccupPacket();
+
         MinecraftForge.EVENT_BUS.register(this);
+        logInfo("LuluOcean Plugin Initialized...");
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::loadFinish);
     }

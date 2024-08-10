@@ -5,10 +5,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import corgitaco.corgilib.math.blendingfunction.BlendingFunction;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectCollection;
+import net.luluborealis.luluocean.common.world.biome.LuluOceanBiomes;
 import net.luluborealis.luluocean.common.world.structure.LuluOceanStructureTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.SectionPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelHeightAccessor;
@@ -36,12 +38,13 @@ public class ArchStructure extends Structure {
 
     public static final int PIECE_BB_EXPANSION = 5;
     private final ArchConfiguration archConfiguration;
+    public Biome thisBiome;
 
     public ArchStructure(StructureSettings structureSettings, ArchConfiguration archConfiguration) {
         super(structureSettings);
+        this.thisBiome = null;
         this.archConfiguration = archConfiguration;
     }
-
 
     private static void generatePieces(StructurePiecesBuilder piecesBuilder, GenerationContext context, ArchConfiguration config) {
         WorldgenRandom random = context.random();
@@ -75,7 +78,9 @@ public class ArchStructure extends Structure {
             int points = 1000;
 
             if (config.biomeEnforcement() != ArchConfiguration.EMPTY) {
-                if (!matchesBiome(start, generator, config.biomeEnforcement(), randomState) || !matchesBiome(end, generator, config.biomeEnforcement(), randomState)) {
+                var testStartDebug = matchesBiome(start, generator, config.biomeEnforcement(), randomState);
+                var testEndDebug = matchesBiome(end, generator, config.biomeEnforcement(), randomState);
+                if (!testStartDebug || !testEndDebug) {
                     return;
                 }
             }
@@ -177,7 +182,15 @@ public class ArchStructure extends Structure {
     }
 
     private static boolean matchesBiome(BlockPos pos, ChunkGenerator generator, TagKey<Biome> biomeTagKey, RandomState randomState) {
-        return generator.getBiomeSource().getNoiseBiome(QuartPos.fromBlock(pos.getX()), QuartPos.fromBlock(pos.getY()), QuartPos.fromBlock(pos.getZ()), randomState.sampler()).is(biomeTagKey);
+        var test = generator.getBiomeSource().getNoiseBiome(QuartPos.fromBlock(pos.getX()), QuartPos.fromBlock(pos.getY()), QuartPos.fromBlock(pos.getZ()), randomState.sampler());
+        ResourceLocation test2;
+        boolean debug = false;
+        var test3 = biomeTagKey.location();
+        if(test.unwrapKey().isPresent()){
+            test2 = test.unwrapKey().get().location();
+            debug = test2.getPath().matches(test3.getPath());
+        }
+        return debug;
     }
 
 

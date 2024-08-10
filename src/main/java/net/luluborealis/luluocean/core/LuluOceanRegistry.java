@@ -7,9 +7,11 @@ import net.luluborealis.luluocean.common.world.feature.features.LuluOceanStructu
 import net.luluborealis.luluocean.common.world.feature.features.overworld.LuluOceanOverworldFeatures;
 import net.luluborealis.luluocean.common.world.structure.LuluOceanStructureTypes;
 import net.luluborealis.luluocean.common.world.structure.LuluOceanStructures;
+import net.luluborealis.luluocean.registry.RegisterGameEvents;
 
 public class LuluOceanRegistry {
     public static void loadClasses() {
+        RegisterGameEvents.loadClass();
         LuluOceanFeatures.loadClass();
         LuluOceanBiomes.loadClass();
         LuluOceanStructureTypes.loadClass();

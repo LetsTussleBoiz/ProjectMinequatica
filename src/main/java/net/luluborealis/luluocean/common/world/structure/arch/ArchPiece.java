@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.luluborealis.luluocean.LuluOcean;
+import net.luluborealis.luluocean.common.world.feature.LuluOceanFeatures;
 import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
 import net.luluborealis.luluocean.common.world.structure.LuluOceanStructurePieceTypes;
 import net.minecraft.core.BlockPos;
@@ -94,6 +95,8 @@ public class ArchPiece extends StructurePiece {
 
             if (DEBUG) {
                 worldGenLevel.setBlock(position, Blocks.GLOWSTONE.defaultBlockState(), 2);
+            } else {
+                LuluOceanFeatures.BOULDER.get().fillList(toPlace, worldGenLevel.getSeed(), random, position, config);
             }
         }
 

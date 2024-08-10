@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#luluocean:is_ocean",
+    "#luluocean:is_deep_ocean"
+  ]
+}

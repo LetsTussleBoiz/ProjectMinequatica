@@ -1,0 +1,42 @@
+{
+  "luluocean:lush_stacks": {
+    "r": 93,
+    "g": 254,
+    "b": 184
+  },
+  "luluocean:dead_sea": {
+    "r": 96,
+    "g": 107,
+    "b": 133
+  },
+  "luluocean:frozen_depths": {
+    "r": 59,
+    "g": 37,
+    "b": 85
+  },
+  "alexscaves:abyssal_chasm": {
+    "r": 0,
+    "g": 0,
+    "b": 0
+  },
+  "alexscaves:forlorn_hollows": {
+    "r": 154,
+    "g": 119,
+    "b": 25
+  },
+  "alexscaves:magnetic_caves": {
+    "r": 240,
+    "g": 61,
+    "b": 61
+  },
+  "alexscaves:toxic_caves": {
+    "r": 153,
+    "g": 255,
+    "b": 160
+  },
+  "alexscaves:primordial_caves": {
+    "r": 171,
+    "g": 188,
+    "b": 41
+  }
+}

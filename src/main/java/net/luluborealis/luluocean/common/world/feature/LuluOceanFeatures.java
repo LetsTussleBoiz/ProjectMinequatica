@@ -1,7 +1,9 @@
 package net.luluborealis.luluocean.common.world.feature;
 
 import net.luluborealis.luluocean.LuluOcean;
+import net.luluborealis.luluocean.common.world.feature.config.NoisySphereConfig;
 import net.luluborealis.luluocean.common.world.feature.config.PointyRockConfig;
+import net.luluborealis.luluocean.common.world.feature.gen.Boulder;
 import net.luluborealis.luluocean.common.world.feature.gen.overworld.PointyRockFeature;
 import net.luluborealis.luluocean.common.world.feature.gen.overworld.TallPointedRocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -16,6 +18,7 @@ import java.util.function.Supplier;
 public class LuluOceanFeatures {
     public static final DeferredRegister<Feature<?>> PROVIDER = DeferredRegister.create(ForgeRegistries.FEATURES, LuluOcean.MOD_ID);
     /********************************************************************Features*************************************************************************/
+    public static final RegistryObject<Boulder> BOULDER = createFeature("boulder", () -> new Boulder(NoisySphereConfig.CODEC.stable()));
     public static final RegistryObject<Feature<PointyRockConfig>> POINTY_ROCK = createFeature("pointed_rock", () -> new PointyRockFeature(PointyRockConfig.CODEC.stable()));
     public static final RegistryObject<Feature<PointyRockConfig>> TALL_POINTED_ROCK = createFeature("tall_pointed_rock", () -> new TallPointedRocks(PointyRockConfig.CODEC.stable()));
 

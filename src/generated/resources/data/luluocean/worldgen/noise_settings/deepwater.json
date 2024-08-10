@@ -1,7 +1,7 @@
 {
 	"sea_level": 320,
 	"disable_mob_generation": false,
-	"aquifers_enabled": true,
+	"aquifers_enabled": false,
 	"ore_veins_enabled": true,
 	"legacy_random_source": false,
 	"default_block": {
@@ -62,40 +62,10 @@
 			"shift_y": 0,
 			"shift_z": "minecraft:shift_z"
 		},
-		"continents": {
-			"type": "minecraft:flat_cache",
-			"argument": {
-				"type": "minecraft:shifted_noise",
-				"noise": "minecraft:continentalness",
-				"xz_scale": 0.1,
-				"y_scale": 0,
-				"shift_x": "minecraft:shift_x",
-				"shift_y": 0,
-				"shift_z": "minecraft:shift_z"
-			}
-		},
-		"erosion": {
-			"type": "minecraft:flat_cache",
-			"argument": {
-				"type": "minecraft:shifted_noise",
-				"noise": "minecraft:erosion",
-				"xz_scale": 0.1,
-				"y_scale": 0,
-				"shift_x": "minecraft:shift_x",
-				"shift_y": 0,
-				"shift_z": "minecraft:shift_z"
-			}
-		},
+		"continents": "minecraft:overworld/continents",
+		"erosion": "minecraft:overworld/erosion",
 		"depth": "minecraft:overworld_amplified/depth",
-		"ridges": {
-			"type": "minecraft:shifted_noise",
-			"noise": "minecraft:ridge",
-			"xz_scale": 0.1,
-			"y_scale": 0,
-			"shift_x": "minecraft:shift_x",
-			"shift_y": 0,
-			"shift_z": "minecraft:shift_z"
-		},
+		"ridges": "minecraft:overworld/ridges",
 		"initial_density_without_jaggedness": {
 			"type": "minecraft:add",
 			"argument1": 0.4,
@@ -374,20 +344,20 @@
 				1
 			],
 			"continentalness": [
-				0.03,
-				0.8
+				-1,
+				1
 			],
 			"erosion": [
-				-0.375,
-				0.05
+				-1,
+				1
 			],
 			"weirdness": [
 				-1,
-				-0.05
+				1
 			],
 			"depth": [
 				0,
-				0
+				1
 			],
 			"offset": 0
 		}
@@ -1355,7 +1325,8 @@
 																"biome_is": [
 																	"minecraft:warm_ocean",
 																	"minecraft:beach",
-																	"minecraft:snowy_beach"
+																	"minecraft:snowy_beach",
+																	"luluocean:lush_stacks"
 																]
 															},
 															"then_run": {
@@ -2131,7 +2102,8 @@
 																"biome_is": [
 																	"minecraft:warm_ocean",
 																	"minecraft:beach",
-																	"minecraft:snowy_beach"
+																	"minecraft:snowy_beach",
+																	"luluocean:lush_stacks"
 																]
 															},
 															"then_run": {
@@ -2377,7 +2349,8 @@
 											"biome_is": [
 												"minecraft:warm_ocean",
 												"minecraft:beach",
-												"minecraft:snowy_beach"
+												"minecraft:snowy_beach",
+												"luluocean:lush_stacks"
 											]
 										},
 										"then_run": {
@@ -2460,7 +2433,8 @@
 											"biome_is": [
 												"minecraft:warm_ocean",
 												"minecraft:lukewarm_ocean",
-												"minecraft:deep_lukewarm_ocean"
+												"minecraft:deep_lukewarm_ocean",
+												"luluocean:lush_stacks"
 											]
 										},
 										"then_run": {
