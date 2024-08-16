@@ -18,7 +18,6 @@
 
 package net.luluborealis.luluocean.mixin.access.warden;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -186,10 +185,10 @@ public final class WardenMixin extends Monster implements WilderWarden {
 //		}
 //	}
 
-	@ModifyExpressionValue(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/warden/Warden;isSilent()Z", ordinal = 0))
-	private boolean wilderWild$preventHeartBeatIfDead(boolean original) {
-		return original || Warden.class.cast(this).isDeadOrDying();
-	}
+//	@Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/warden/Warden;isSilent()Z", ordinal = 0))
+//	private void wilderWild$preventHeartBeatIfDead(CallbackInfo ci) {
+//		return original || Warden.class.cast(this).isDeadOrDying();
+//	}
 
 	@Inject(method = "tick", at = @At("HEAD"))
 	private void wilderWild$preventMovementWhileDiggingOrEmerging1(CallbackInfo info) {

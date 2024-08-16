@@ -18,7 +18,7 @@
 
 package net.luluborealis.luluocean.mixin.access.client.warden;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.luluborealis.luluocean.config.EntityConfig;
 import net.luluborealis.luluocean.entity.render.animations.CustomWardenAnimations;
 import net.luluborealis.luluocean.entity.render.animations.WilderWarden;
@@ -76,8 +76,8 @@ public class WardenModelMixin<T extends Warden> {
 	@Shadow
 	protected ModelPart rightArm;
 
-	@Inject(at = @At("TAIL"), method = "animateTendrils", locals = LocalCapture.CAPTURE_FAILHARD, require = 0)
-	private void wilderWild$animateCustomTendrils(T warden, float animationProgress, float tickDelta, CallbackInfo info, float cos) { //CUSTOM TENDRIL ANIMATION
+	@Inject(at = @At("TAIL"), method = "animateTendrils", require = 0)
+	private void wilderWild$animateCustomTendrils(T warden, float animationProgress, float tickDelta, CallbackInfo info, @Local(ordinal = 2) float cos) { //CUSTOM TENDRIL ANIMATION
 		if (EntityConfig.WardenConfig.wardenCustomTendrils) {
 			this.leftTendril.xRot = cos;
 			this.rightTendril.xRot = cos;
@@ -92,7 +92,7 @@ public class WardenModelMixin<T extends Warden> {
 		}
 	}
 
-	@ModifyExpressionValue(
+	@Inject(
 		method = "setupAnim*",
 		at = @At(
 			value = "FIELD",
@@ -108,7 +108,7 @@ public class WardenModelMixin<T extends Warden> {
 		return WARDEN_DIG;
 	}
 
-	@ModifyExpressionValue(
+	@Inject(
 		method = "setupAnim*",
 		at = @At(
 			value = "FIELD",
@@ -124,7 +124,7 @@ public class WardenModelMixin<T extends Warden> {
 		return WARDEN_EMERGE;
 	}
 
-	@ModifyExpressionValue(
+	@Inject(
 		method = "setupAnim*",
 		at = @At(
 			value = "FIELD",

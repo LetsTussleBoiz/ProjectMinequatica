@@ -18,17 +18,9 @@
 
 package net.luluborealis.luluocean.misc.interfaces;
 
-import org.spongepowered.asm.mixin.Unique;
-
 public interface SwimmingWardenInterface {
 
 	boolean wilderWild$isTouchingWaterOrLava();
 
 	boolean wilderWild$isSubmergedInWaterOrLava();
-
-    @Unique
-    boolean projectMinequatica_1_20_1$isTouchingWaterOrLava();
-
-    @Unique
-    boolean projectMinequatica_1_20_1$isSubmergedInWaterOrLava();
 }

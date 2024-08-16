@@ -18,7 +18,6 @@
 
 package net.luluborealis.luluocean.mixin.access.warden;
 
-import net.luluborealis.luluocean.LuluOcean;
 import net.luluborealis.luluocean.config.EntityConfig;
 import net.luluborealis.luluocean.entity.ai.WardenLookControl;
 import net.luluborealis.luluocean.entity.ai.WardenMoveControl;
@@ -38,9 +37,13 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.WaterFluid;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -55,23 +58,23 @@ import java.util.Optional;
 public abstract class WardenSwimMixin extends Monster implements SwimmingWardenInterface {
 
 	@Unique
-	private float projectMinequatica_1_20_1$leaningPitch;
+	private float wilderWild$leaningPitch;
 	@Unique
-	private float projectMinequatica_1_20_1$lastLeaningPitch;
+	private float wilderWild$lastLeaningPitch;
 	@Unique
-	private boolean projectMinequatica_1_20_1$newSwimming;
+	private boolean wilderWild$newSwimming;
 
 	private WardenSwimMixin(EntityType<? extends Monster> entityType, Level level) {
 		super(entityType, level);
 	}
 
 	@Unique
-	private static boolean projectMinequatica_1_20_1$touchingWaterOrLava(@NotNull Entity entity) {
+	private static boolean wilderWild$touchingWaterOrLava(@NotNull Entity entity) {
 		return entity.isInWaterOrBubble() || entity.isInLava() || entity.isVisuallySwimming();
 	}
 
 	@Unique
-	private static boolean projectMinequatica_1_20_1$submergedInWaterOrLava(@NotNull Entity entity) {
+	private static boolean wilderWild$submergedInWaterOrLava(@NotNull Entity entity) {
 		return entity.isEyeInFluid(FluidTags.WATER) || entity.isEyeInFluid(FluidTags.LAVA) || entity.isVisuallySwimming();
 	}
 
@@ -81,67 +84,67 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 	@Shadow
 	public abstract Brain<Warden> getBrain();
 
+	@Shadow @Final private static Logger LOGGER;
+
 	@Inject(method = "tick", at = @At("TAIL"))
 	private void tick(CallbackInfo ci) {
-		this.projectMinequatica_1_20_1$updateSwimAmount();
+		this.wilderWild$updateSwimAmount();
 	}
 
 	@Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
 	public void addAdditionalSaveData(CompoundTag nbt, CallbackInfo info) {
-		nbt.putBoolean("newSwimming", this.projectMinequatica_1_20_1$newSwimming);
+		nbt.putBoolean("newSwimming", this.wilderWild$newSwimming);
 	}
 
 	@Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
 	public void readAdditionalSaveData(CompoundTag nbt, CallbackInfo info) {
-		this.projectMinequatica_1_20_1$newSwimming = nbt.getBoolean("newSwimming");
+		this.wilderWild$newSwimming = nbt.getBoolean("newSwimming");
 	}
 
 	@Unique
-	private void projectMinequatica_1_20_1$updateSwimAmount() {
-		this.projectMinequatica_1_20_1$lastLeaningPitch = this.projectMinequatica_1_20_1$leaningPitch;
+	private void wilderWild$updateSwimAmount() {
+		this.wilderWild$lastLeaningPitch = this.wilderWild$leaningPitch;
 		if (this.isVisuallySwimming()) {
-			this.projectMinequatica_1_20_1$leaningPitch = Math.min(1F, this.projectMinequatica_1_20_1$leaningPitch + 0.09F);
+			this.wilderWild$leaningPitch = Math.min(1F, this.wilderWild$leaningPitch + 0.09F);
 		} else {
-			this.projectMinequatica_1_20_1$leaningPitch = Math.max(0F, this.projectMinequatica_1_20_1$leaningPitch - 0.09F);
+			this.wilderWild$leaningPitch = Math.max(0F, this.wilderWild$leaningPitch - 0.09F);
 		}
 	}
 
 	@Override
 	public boolean isVisuallySwimming() {
-		return this.projectMinequatica_1_20_1$newSwimming || super.isVisuallySwimming();
+		return this.wilderWild$newSwimming || super.isVisuallySwimming();
 	}
 
 	@Inject(at = @At("RETURN"), method = "createNavigation", cancellable = true)
-	public void projectMinequatica_1_20_1$createNavigation(Level level, CallbackInfoReturnable<PathNavigation> info) {
+	public void wilderWild$createNavigation(Level level, CallbackInfoReturnable<PathNavigation> info) {
 		info.setReturnValue(new WardenNavigation(Warden.class.cast(this), level));
 	}
 
 	@Override
 	public void travel(@NotNull Vec3 travelVector) {
 		Warden warden = Warden.class.cast(this);
-		var temp = this.isEffectiveAi();
-		var temp2 = this.projectMinequatica_1_20_1$isTouchingWaterOrLava();
-		if (this.projectMinequatica_1_20_1$isTouchingWaterOrLava() && EntityConfig.WardenConfig.wardenSwims) {
+		if (this.wilderWild$isTouchingWaterOrLava()) {
 			this.moveRelative(this.getSpeed(), travelVector);
 			this.move(MoverType.SELF, this.getDeltaMovement());
 			this.setDeltaMovement(this.getDeltaMovement().scale(0.9));
 			if (!this.isDiggingOrEmerging() && !warden.hasPose(Pose.SNIFFING) && !warden.hasPose(Pose.DYING) && !warden.hasPose(Pose.ROARING)) {
-				if (this.projectMinequatica_1_20_1$isSubmergedInWaterOrLava()) {
+				if (this.wilderWild$isSubmergedInWaterOrLava()) {
 					warden.setPose(Pose.SWIMMING);
 				} else {
 					warden.setPose(Pose.STANDING);
 				}
 			}
 
-			this.projectMinequatica_1_20_1$newSwimming = this.getFluidHeight(FluidTags.WATER) >= this.getEyeHeight(this.getPose()) * 0.75 || this.getFluidHeight(FluidTags.LAVA) >= this.getEyeHeight(this.getPose()) * 0.75;
+			this.wilderWild$newSwimming = this.getFluidTypeHeight(this.getEyeInFluidType()) >= this.getEyeHeight(this.getPose());
 		} else {
 			super.travel(travelVector);
-			this.projectMinequatica_1_20_1$newSwimming = false;
+			this.wilderWild$newSwimming = false;
 		}
 	}
 
 	@Inject(method = "<init>", at = @At("TAIL"))
-	private void projectMinequatica_1_20_1$wardenEntity(EntityType<? extends Monster> entityType, Level level, CallbackInfo ci) {
+	private void wardenEntity(EntityType<? extends Monster> entityType, Level level, CallbackInfo ci) {
 		Warden wardenEntity = Warden.class.cast(this);
 		wardenEntity.setPathfindingMalus(BlockPathTypes.WATER, 0F);
 		wardenEntity.setPathfindingMalus(BlockPathTypes.POWDER_SNOW, -1F);
@@ -152,12 +155,12 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 
 	@Override
 	public boolean canBreatheUnderwater() {
-		return EntityConfig.WardenConfig.wardenSwims;
+		return true;
 	}
 
 	@Override
 	public boolean isPushedByFluid() {
-		return !EntityConfig.WardenConfig.wardenSwims;
+		return false;
 	}
 
 	@Override
@@ -168,13 +171,13 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 
 	@Override
 	public void jumpInLiquid(@NotNull TagKey<Fluid> fluid) {
-		if (EntityConfig.WardenConfig.wardenSwims && (this.getBrain().hasMemoryValue(MemoryModuleType.ROAR_TARGET) || this.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET))) {
+		if (this.getBrain().hasMemoryValue(MemoryModuleType.ROAR_TARGET) || this.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET)) {
 			Optional<LivingEntity> ATTACK_TARGET = this.getBrain().getMemory(MemoryModuleType.ATTACK_TARGET);
 			Optional<LivingEntity> ROAR_TARGET = this.getBrain().getMemory(MemoryModuleType.ROAR_TARGET);
 			LivingEntity target = ATTACK_TARGET.orElseGet(() -> ROAR_TARGET.orElse(null));
 
 			if (target != null) {
-				if ((!projectMinequatica_1_20_1$touchingWaterOrLava(target) || !projectMinequatica_1_20_1$submergedInWaterOrLava(this)) && target.getY() > this.getY()) {
+				if ((!wilderWild$touchingWaterOrLava(target) || !wilderWild$submergedInWaterOrLava(this)) && target.getY() > this.getY()) {
 					super.jumpInLiquid(fluid);
 				}
 			}
@@ -186,39 +189,34 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 	@Unique
 	@Override
 	public float getSwimAmount(float tickDelta) {
-		return Mth.lerp(tickDelta, this.projectMinequatica_1_20_1$lastLeaningPitch, this.projectMinequatica_1_20_1$leaningPitch);
+		return Mth.lerp(tickDelta, this.wilderWild$lastLeaningPitch, this.wilderWild$leaningPitch);
 	}
 
 	@Override
 	protected boolean updateInWaterStateAndDoFluidPushing() {
-		if (EntityConfig.WardenConfig.wardenSwims) {
-			Warden warden = Warden.class.cast(this);
-			this.fluidHeight.clear();
-			warden.updateInWaterStateAndDoWaterCurrentPushing();
-			boolean bl = warden.updateFluidHeightAndDoFluidPushing(FluidTags.LAVA, 0.1D);
-			return this.projectMinequatica_1_20_1$isTouchingWaterOrLava() || bl;
-		}
-		return super.updateInWaterStateAndDoFluidPushing();
+		Warden warden = Warden.class.cast(this);
+		this.fluidHeight.clear();
+		warden.updateInWaterStateAndDoWaterCurrentPushing();
+		boolean bl = warden.updateFluidHeightAndDoFluidPushing(FluidTags.LAVA, 0.1D);
+		return this.wilderWild$isTouchingWaterOrLava() || bl;
 	}
 
 	@Inject(method = "getDimensions", at = @At("RETURN"), cancellable = true)
-	public void projectMinequatica_1_20_1$modifySwimmingDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> info) {
+	public void wilderWild$modifySwimmingDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> info) {
 		if (!this.isDiggingOrEmerging() && this.isVisuallySwimming()) {
 			info.setReturnValue(EntityDimensions.scalable(this.getType().getWidth(), 0.85F));
 		}
 	}
 
-	@Unique
 	@Override
-	public boolean projectMinequatica_1_20_1$isTouchingWaterOrLava() {
+	public boolean wilderWild$isTouchingWaterOrLava() {
 		Warden warden = Warden.class.cast(this);
 		return warden.isInWaterOrBubble() || warden.isInLava();
 	}
 
-	@Unique
 	@Override
-	public boolean projectMinequatica_1_20_1$isSubmergedInWaterOrLava() {
+	public boolean wilderWild$isSubmergedInWaterOrLava() {
 		Warden warden = Warden.class.cast(this);
-		return warden.isEyeInFluid(FluidTags.WATER) || warden.isEyeInFluid(FluidTags.LAVA);
+		return warden.isEyeInFluidType(warden.getEyeInFluidType());
 	}
 }

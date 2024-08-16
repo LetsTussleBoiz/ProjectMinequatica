@@ -13,7 +13,6 @@
     "sculk.SculkSensorBlockMixin",
     "sculk.SculkShriekerBlockEntityMixin",
     "sculk.SculkShriekerBlockMixin",
-    "warden.LivingEntityMixin",
     "warden.WardenMixin",
     "warden.WardenMixin$VibrationUserMixin",
     "warden.WardenSwimMixin"
