@@ -25,10 +25,10 @@ import net.luluborealis.luluocean.entity.render.animations.WilderWarden;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.model.WardenModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.monster.warden.Warden;
+import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
@@ -38,7 +38,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(WardenModel.class)
 public class WardenModelMixin<T extends Warden> {
@@ -151,7 +150,7 @@ public class WardenModelMixin<T extends Warden> {
 		require = 0
 	)
 	private void wilderWild$setupAnim(T warden, float angle, float distance, float anim, float headYaw, float headPitch, CallbackInfo info) {
-		if (EntityConfig.WardenConfig.swimAndAnimationConfigEnabled() && wilderWild$isSubmerged(warden)) {
+		if (wilderWild$isSubmerged(warden)) {
 			this.wilderWild$animateSwimming(
 				warden,
 				angle,
@@ -185,7 +184,7 @@ public class WardenModelMixin<T extends Warden> {
 		float speedDelta = Math.min(distance / 0.3F, 1F) * submergedLerp;
 		float swimLerp = Mth.rotLerp(warden.getSwimAmount(lerpTime), notSwimming, swimming) * speedDelta;
 
-		if (((warden.isVisuallySwimming() && canSwim) || (swimLerp > 0)) && distance > 0) {
+		if (((warden.isVisuallySwimming() && canSwim) || (swimLerp > 0) && distance > 0)) {
 			//TODO: make swim animation last until lerp is done when exiting water. how.
 			float angles = angle * (WILDERWILD$PI_02);
 
@@ -256,7 +255,7 @@ public class WardenModelMixin<T extends Warden> {
 
 	@Unique
 	private boolean wilderWild$isSubmerged(@NotNull Warden warden) {
-		return warden.isInWaterOrBubble() || warden.isEyeInFluid(FluidTags.LAVA);
+		return warden.getEyeInFluidType() != ForgeMod.EMPTY_TYPE.get();
 	}
 
 }

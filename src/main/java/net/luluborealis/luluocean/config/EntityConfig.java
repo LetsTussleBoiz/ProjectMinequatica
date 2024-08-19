@@ -31,8 +31,6 @@ public final class EntityConfig {
 
 		public static boolean wardenSwims = true;
 
-		public static boolean wardenSwimAnimation = true;
-
 		public static boolean wardenCustomTendrils = true;
 
 		public static boolean wardenImprovedDig = true;
@@ -47,8 +45,5 @@ public final class EntityConfig {
 
 		public static boolean wardenEmergesFromEgg = false;
 
-		public static boolean swimAndAnimationConfigEnabled() {
-			return wardenSwims && wardenSwimAnimation;
-		}
 	}
 }

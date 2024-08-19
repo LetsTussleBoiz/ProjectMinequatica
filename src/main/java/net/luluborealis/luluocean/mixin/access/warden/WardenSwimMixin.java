@@ -37,9 +37,9 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.WaterFluid;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -62,20 +62,10 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 	@Unique
 	private float wilderWild$lastLeaningPitch;
 	@Unique
-	private boolean wilderWild$newSwimming;
+	private boolean wilderWild$isSwimming;
 
 	private WardenSwimMixin(EntityType<? extends Monster> entityType, Level level) {
 		super(entityType, level);
-	}
-
-	@Unique
-	private static boolean wilderWild$touchingWaterOrLava(@NotNull Entity entity) {
-		return entity.isInWaterOrBubble() || entity.isInLava() || entity.isVisuallySwimming();
-	}
-
-	@Unique
-	private static boolean wilderWild$submergedInWaterOrLava(@NotNull Entity entity) {
-		return entity.isEyeInFluid(FluidTags.WATER) || entity.isEyeInFluid(FluidTags.LAVA) || entity.isVisuallySwimming();
 	}
 
 	@Shadow
@@ -91,16 +81,29 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 		this.wilderWild$updateSwimAmount();
 	}
 
+	/**
+	 * Writes Warden NBT swim tag to save data
+	 * @param nbt
+	 * @param info
+	 */
 	@Inject(method = "addAdditionalSaveData", at = @At("TAIL"))
 	public void addAdditionalSaveData(CompoundTag nbt, CallbackInfo info) {
-		nbt.putBoolean("newSwimming", this.wilderWild$newSwimming);
+		nbt.putBoolean("newSwimming", this.wilderWild$isSwimming);
 	}
 
+	/**
+	 * Checks save data for Warden NBT swim tag
+	 * @param nbt
+	 * @param info
+	 */
 	@Inject(method = "readAdditionalSaveData", at = @At("TAIL"))
 	public void readAdditionalSaveData(CompoundTag nbt, CallbackInfo info) {
-		this.wilderWild$newSwimming = nbt.getBoolean("newSwimming");
+		this.wilderWild$isSwimming = nbt.getBoolean("newSwimming");
 	}
 
+	/**
+	 * Controls pitch of Warden to ensure he is tilted correctly while swimming
+	 */
 	@Unique
 	private void wilderWild$updateSwimAmount() {
 		this.wilderWild$lastLeaningPitch = this.wilderWild$leaningPitch;
@@ -111,16 +114,29 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 		}
 	}
 
+	/**
+	 * Boolean to check if Warden is animated swimming
+	 * @return
+	 */
 	@Override
 	public boolean isVisuallySwimming() {
-		return this.wilderWild$newSwimming || super.isVisuallySwimming();
+		return this.wilderWild$isSwimming || super.isVisuallySwimming();
 	}
 
+	/**
+	 * Injects custom Warden Navigation class into AI
+	 * @param level
+	 * @param info
+	 */
 	@Inject(at = @At("RETURN"), method = "createNavigation", cancellable = true)
 	public void wilderWild$createNavigation(Level level, CallbackInfoReturnable<PathNavigation> info) {
 		info.setReturnValue(new WardenNavigation(Warden.class.cast(this), level));
 	}
 
+	/**
+	 * Assigns variables to travel vectors and AI, then initiates swimming/standing animation based on what liquid it is in
+	 * @param travelVector
+	 */
 	@Override
 	public void travel(@NotNull Vec3 travelVector) {
 		Warden warden = Warden.class.cast(this);
@@ -128,21 +144,34 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 			this.moveRelative(this.getSpeed(), travelVector);
 			this.move(MoverType.SELF, this.getDeltaMovement());
 			this.setDeltaMovement(this.getDeltaMovement().scale(0.9));
-			if (!this.isDiggingOrEmerging() && !warden.hasPose(Pose.SNIFFING) && !warden.hasPose(Pose.DYING) && !warden.hasPose(Pose.ROARING)) {
-				if (this.wilderWild$isSubmergedInWaterOrLava()) {
-					warden.setPose(Pose.SWIMMING);
+			if (!this.isDiggingOrEmerging() && !warden.hasPose(Pose.SNIFFING) &&
+					!warden.hasPose(Pose.DYING) && !warden.hasPose(Pose.ROARING)) {
+				if (this.wilderWild$isSubmergedInWaterOrLava() && !this.onGround()) {
+					LOGGER.info("Pose: Swimming");
 				} else {
-					warden.setPose(Pose.STANDING);
+					LOGGER.info("Pose: Standing");
 				}
 			}
 
-			this.wilderWild$newSwimming = this.getFluidTypeHeight(this.getEyeInFluidType()) >= this.getEyeHeight(this.getPose());
+			this.goDownInWater();
+
+			if (warden.getEyeInFluidType() != ForgeMod.EMPTY_TYPE.get()){
+				this.wilderWild$isSwimming = this.getFluidTypeHeight(this.getEyeInFluidType()) >= this.getEyeHeight(this.getPose());
+			} else {
+				this.wilderWild$isSwimming = false;
+			}
 		} else {
 			super.travel(travelVector);
-			this.wilderWild$newSwimming = false;
+			this.wilderWild$isSwimming = false;
 		}
 	}
 
+	/**
+	 * Modifies Warden AI to not have a pathfinding malus against water, so he doesn't freak out if he's swimming
+	 * @param entityType
+	 * @param level
+	 * @param ci
+	 */
 	@Inject(method = "<init>", at = @At("TAIL"))
 	private void wardenEntity(EntityType<? extends Monster> entityType, Level level, CallbackInfo ci) {
 		Warden wardenEntity = Warden.class.cast(this);
@@ -153,22 +182,48 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 		this.lookControl = new WardenLookControl(wardenEntity, 10);
 	}
 
+	/**
+	 * Verifies the Warden cannot swim through Air, which in Forge counts as a LIQUID FOR SOME REASON
+	 * @param type
+	 * @return
+	 */
+	@Override
+	public boolean canSwimInFluidType(FluidType type) {
+        return type != ForgeMod.EMPTY_TYPE.get();
+    }
+
+	/**
+	 * Override of method that Makes Warden breath underwater
+	 * @return true
+	 */
 	@Override
 	public boolean canBreatheUnderwater() {
 		return true;
 	}
 
+	/**
+	 * Override of method that Makes Warden not be pushed by water
+	 * @return false
+	 */
 	@Override
 	public boolean isPushedByFluid() {
 		return false;
 	}
 
+	/**
+	 * A quick check to get the custom swimming sounds of the Warden
+	 * @return Warden swim sounds
+	 */
 	@Override
 	@NotNull
 	public SoundEvent getSwimSound() {
 		return EntityConfig.WardenConfig.wardenSwims ? RegisterSounds.ENTITY_WARDEN_SWIM.get() : super.getSwimSound();
 	}
 
+	/**
+	 * Rewrites Warden AI to modify jumping behavior when in combat
+	 * @param fluid
+	 */
 	@Override
 	public void jumpInLiquid(@NotNull TagKey<Fluid> fluid) {
 		if (this.getBrain().hasMemoryValue(MemoryModuleType.ROAR_TARGET) || this.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET)) {
@@ -177,21 +232,37 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 			LivingEntity target = ATTACK_TARGET.orElseGet(() -> ROAR_TARGET.orElse(null));
 
 			if (target != null) {
-				if ((!wilderWild$touchingWaterOrLava(target) || !wilderWild$submergedInWaterOrLava(this)) && target.getY() > this.getY()) {
+				boolean isTargetTouchingWater = wilderWild$targetTouchingWaterOrLava(target);
+				boolean wardenIsInWater = this.wilderWild$isSubmergedInWaterOrLava();
+				boolean targetIsAboveWarden = target.getY() > this.getY();
+
+				if (!isTargetTouchingWater || (!wardenIsInWater && targetIsAboveWarden)) {
 					super.jumpInLiquid(fluid);
+					return;
 				}
 			}
-		} else {
-			super.jumpInLiquid(fluid);
 		}
+
+//		if(this.wilderWild$isSubmergedInWaterOrLava() || this.wilderWild$isTouchingWaterOrLava()){
+//			this.goDownInWater();
+//		}
+		//super.jumpInLiquid(fluid);
 	}
 
-	@Unique
+	/**
+	 * An equation to calculate how far the Warden will sim
+	 * @param tickDelta is the change in tick
+	 * @return how far the warden swims
+	 */
 	@Override
 	public float getSwimAmount(float tickDelta) {
 		return Mth.lerp(tickDelta, this.wilderWild$lastLeaningPitch, this.wilderWild$leaningPitch);
 	}
 
+	/**
+	 * Forces the game to acknowledge the Warden as an aquatic mob and not push him w/ water via a mixin override
+	 * @return boolean
+	 */
 	@Override
 	protected boolean updateInWaterStateAndDoFluidPushing() {
 		Warden warden = Warden.class.cast(this);
@@ -201,6 +272,11 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 		return this.wilderWild$isTouchingWaterOrLava() || bl;
 	}
 
+	/**
+	 * Sets bounding box of Warden when actively swimming
+	 * @param pose
+	 * @param info
+	 */
 	@Inject(method = "getDimensions", at = @At("RETURN"), cancellable = true)
 	public void wilderWild$modifySwimmingDimensions(Pose pose, CallbackInfoReturnable<EntityDimensions> info) {
 		if (!this.isDiggingOrEmerging() && this.isVisuallySwimming()) {
@@ -208,15 +284,28 @@ public abstract class WardenSwimMixin extends Monster implements SwimmingWardenI
 		}
 	}
 
+	@Unique
+	private static boolean wilderWild$targetTouchingWaterOrLava(@NotNull Entity target) {
+		return target.isInWaterOrBubble() || target.isInLava() || target.isVisuallySwimming();
+	}
+
+	/***
+	 * Returns boolean based on if Warden is TOUCHING water
+	 * @return boolean
+	 */
 	@Override
 	public boolean wilderWild$isTouchingWaterOrLava() {
 		Warden warden = Warden.class.cast(this);
 		return warden.isInWaterOrBubble() || warden.isInLava();
 	}
 
+	/***
+	 * Returns boolean based on if Warden is in water up to eye level (underwater)
+	 * @return boolean
+	 */
 	@Override
 	public boolean wilderWild$isSubmergedInWaterOrLava() {
 		Warden warden = Warden.class.cast(this);
-		return warden.isEyeInFluidType(warden.getEyeInFluidType());
+		return warden.getEyeInFluidType() != ForgeMod.EMPTY_TYPE.get();
 	}
 }
